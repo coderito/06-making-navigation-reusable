@@ -9,6 +9,10 @@ export const ModalPage = () => {
     setShowModal(true)
   }
 
+  const handleClose = () => {
+    setShowModal(false)
+  }
+
   return (
     <div>
         <Button 
@@ -16,7 +20,7 @@ export const ModalPage = () => {
           onClick={handleClick}
           primary 
         >Show Modal</Button>
-        {showModal && <Modal />}
+        {showModal && <Modal onClose={handleClose}/>}
     </div>
   )
 }
